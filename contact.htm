@@ -45,6 +45,7 @@
                         </label>
 
                         <button type="submit" class="primary-btn submit-btn">Send Message</button>
+                        <p id="form-status" class="form-status" aria-live="polite"></p>
                     </form>
                 </div>
 
@@ -77,5 +78,18 @@
     <footer class="site-footer">
         &copy; 2025 <i>Lwando Sodinga</i>
     </footer>
+
+    <script>
+        const form = document.querySelector('.contact-form');
+        const status = document.getElementById('form-status');
+
+        if (form) {
+            form.addEventListener('submit', function () {
+                status.textContent = 'Thanks! Your message has been sent successfully.';
+                status.style.color = '#28a745';
+                status.style.display = 'block';
+            });
+        }
+    </script>
 </body>
 </html>
